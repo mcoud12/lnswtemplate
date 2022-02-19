@@ -1,0 +1,182 @@
+﻿ <!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.xiaomistore.pk/mobile/user/register by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Feb 2022 09:01:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<base  />
+<meta charset="utf-8" />
+<title>Mi Account - Xiaomi Store Pakistan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link href="../themes/miqinew/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
+<link href="../themes/miqinew/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../themes/miqinew/ectouch.css" rel="stylesheet" type="text/css" />
+<link href="../themes/miqinew/css/xiaomi_alerts.css" rel="stylesheet" type="text/css" />
+<link href="../themes/miqinew/css/mi_account.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../data/static/js/common.js"></script><script type="text/javascript" src="../data/static/js/user0621.js?8302018.js"></script><script type="text/javascript" src="../data/static/js/xiaomi_alerts.js"></script><script type="text/javascript" src="../data/static/js/transport_jquery.js"></script><script type="text/javascript" src="../themes/miqinew/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../data/static/js/utils.js"></script></head>
+<body>
+<script>
+$(function() {
+
+    //Load the empty text box
+    $("input:text,input:password").val("");
+
+    //Prompt text hides the display
+    //login interface
+    $(".mi-account-wrapper .labelbox .item_account").focus(function() {
+        if ($(this).val().length == 0) {
+            $(this).parents(".labelbox").removeClass("error_bg");
+        }
+    }).blur(function() {
+        if ($(this).val().length == 0) {
+            $(this).parents(".labelbox").addClass("error_bg");
+        }
+    }).keyup(function() {
+        if ($(this).val().length > 0) {
+            $(this).parents(".labelbox").removeClass("error_bg");
+        } else {
+            $(this).parents(".labelbox").addClass("error_bg");
+        }
+    });
+    //Registration Interface
+    $(".mi-register-wrapper .regbox .labelbox input").focus(function() {
+        if ($(this).val().length == 0) {
+            $(this).parents(".labelbox").removeClass("err_label");
+        }
+    }).blur(function() {
+        if ($(this).val().length == 0) {
+            $(this).parents(".labelbox").addClass("err_label");
+        }
+    }).keyup(function() {
+        if ($(this).val().length > 0) {
+            $(this).parents(".labelbox").removeClass("err_label");
+        } else {
+            $(this).parents(".labelbox").addClass("err_label");
+        }
+    });
+})
+function change_p_type() {
+    if ($(".mi-account-wrapper .pwd_panel input").attr("type") == "password") {
+        $(".mi-account-wrapper .pwd_panel .eye").addClass("chk");
+
+        document.getElementsByClassName("password").item(0).type = "text";
+    } else {
+        $(".mi-account-wrapper .pwd_panel .eye").removeClass("chk");
+        document.getElementsByClassName("password").item(0).type = "password";
+    }
+}
+</script>
+<div class="mi-register-wrapper">
+<div class="wrap-registration">
+<div class="layout_pwd">
+<form action="https://www.xiaomistore.pk/mobile/user.php" method="post" name="formUser" onsubmit="return register();">
+<input type="hidden" value="C4E1AB9A7DE79D7C750E8916875E7DBE" id="validate">
+<input type="hidden" id="sendtype">
+<div class="mobile-frame">
+<div class="title-item">
+<h4 class="title_big">Create Mi Account </h4> </div>
+<div>
+<div class="regbox">
+<div class="emailregbox">
+<h4 class="tit_normal">Mobile</h4>
+<div class="inputbg mobile_number">
+<label class="labelbox">
+ <input type="text" placeholder="Enter mobile number" name="mobile" id="mobile" onblur="checkMobilePhone(this.value);" onkeyup="checkMobilePhone(this.value);"> </label>
+</div>
+<div id="mobile_notice" class="err_tip">
+<div><em class="icon_error"></em><span id="mobile_notice_text" class="error-con"></span></div>
+</div>
+<h4 class="tit_normal">Email</h4>
+<div class="inputbg email_address">
+<label class="labelbox">
+<input type="email" placeholder="Enter email address" name="email" id="email" onblur="checkEmail(this.value);" onkeyup="checkEmail(this.value);"> </label>
+</div>
+<div id="email_notice" class="err_tip">
+<div><em class="icon_error"></em><span id="email_notice_text" class="error-con"></span></div>
+</div>
+<h4 class="tit_normal">Password</h4>
+<div class="inputbg main_password">
+<label class="labelbox">
+<input type="password" placeholder="Enter your password" name="password" id="password1" onblur="check_password(this.value);" onkeyup="check_password(this.value);"> </label>
+</div>
+<div id="password_notice" class="err_tip">
+<div><em class="icon_error"></em><span id="password_notice_text" class="error-con"></span></div>
+</div>
+<h4 class="tit_normal">Confirm Password</h4>
+<div class="inputbg confirm_password">
+<label class="labelbox">
+<input type="password" placeholder="Confirm your password" name="confirm_password" id="conform_password" onblur="check_conform_password(this.value);" onkeyup="check_conform_password(this.value);"> </label>
+</div>
+<div id="confirm_password" class="err_tip">
+<div><em class="icon_error"></em><span id="confirm_password_text" class="error-con"></span></div>
+</div>
+<div class="fixed_bot">
+<input name="act" type="hidden" value="act_register">
+<input name="enabled_sms" type="hidden" value="0" />
+<input type="hidden" name="back_act" value="" />
+<input class="btn-register" type="submit" name="Submit" value="Create Mi Account"> </div>
+</div>
+</div>
+<div class="privacy_box">
+<div class="n_checked">
+<input id="agreement" name="agreement" value="1" type="checkbox" checked="checked">
+<label for="agreement"> <span></span>
+<p class="msg">By creating an account you are agreeing to our User Agreement and Privacy Policy</p>
+</label>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="account-footer">
+<div class="link-area clearfix">
+ <ul class="links-list">
+<li><a class="a_link" href="#" target="_blank"><em></em></a>|</li>
+<li> <a class="a_link" href="#" title="" target="_blank"></a> </li>
+</ul>
+</div>
+<p class="nf-intro"><span>Xiaomi Store Pakistan., All rights reserved</span></p>
+</div>
+<script type="text/javascript" src="../themes/miqinew/js/sms.js"></script>
+<div style="width:1px; height:1px; overflow:hidden"><a href="https://www.xiaomistore.pk/" target="_self" style=" font-family:Verdana; font-size:11px;">Powered&nbsp;by&nbsp;<strong><span style="color: #3366FF">Xiaomip</span>&nbsp;<span style="color: #FF9966">v2.7.3</span></strong></a>&nbsp;</div>
+<script type="text/javascript">
+var process_request = "Please wait...";
+var username_empty = "- Please enter username.";
+var username_shorter = "- Username length can't less than 3 characters.";
+var username_invalid = "- Username only can be composed of letters, figure and underline.";
+var mobile_shorter = "- Mobile number is invalid.";
+var password_empty = "- Please enter password.";
+var password_shorter = "- Password can't less than 6 characters.";
+var confirm_password_invalid = "- The two passwords you entered did not match.";
+var email_empty = "- Email can't be blank.";
+var email_invalid = "- Email isn't a legal address.";
+var agreement = "- You do not agree with the agreement";
+var msn_invalid = "- msn address is invalid";
+var qq_invalid = "- QQ number is invalid";
+var home_phone_invalid = "- Home phone No. is invalid";
+var office_phone_invalid = "- Office phone No. is invalid";
+var mobile_phone_invalid = "- Mobile No. is invalid";
+var msg_un_blank = "* Username is blank";
+var msg_un_length = "* Username should not exceed 7 Chinese characters";
+var msg_un_format = "* Username contain invalid characters";
+var msg_un_registered = "* Username exists, please enter again";
+var msg_can_rg = "* You can register";
+var msg_email_blank = "* Email address is blank";
+var msg_email_registered = "* Mail-box exists, please enter again";
+var msg_email_format = "* Email address is invalid";
+var msg_blank = "is blank";
+var no_select_question = "- You have not finished the password question operation";
+var passwd_balnk = "- The password entered can`t have blank";
+var username_exist = "%s already exists";
+</script>
+</body>
+
+<!-- Mirrored from www.xiaomistore.pk/mobile/user/register by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Feb 2022 09:01:39 GMT -->
+</html>
